@@ -1,0 +1,38 @@
+<form id="invisible" action="checkout.php" method="post">			
+			<label>Name*</label> 
+  			<input type="text" name="name"> 
+  			<label>Street Address*</label>
+  			<input type="text" name="address" value="123 Mystreet"> 
+  			<label>City, Postal Code*</label>
+  			<input type="text" name="city" value="Mytown, 12312">
+  			<label>Province or Territory</label>
+  			<select name="province">
+    			<option>Alberta</option>
+    			<option>British Columbia</option>
+    			<option>Manitoba</option>
+    			<option>New Brunswick</option>
+    			<option>Newfoundland and Labrador</option>
+    			<option>Nova Scotia</option>
+    			<option>Ontario</option>
+    			<option>Prince Edward Island</option>
+    			<option>Quebec</option>
+    			<option>Saskatchewan</option>
+    			<option>Northwest Territories</option>
+    			<option>Nunavut</option>
+   		 		<option>Yukon</option>
+  			</select>
+  			<label>Email*</label>
+  			<input type="text" name="email" value="me@mail.com" >
+  			<label>Credit Card Number*</label>
+  			<input type="text" name="ccnum" value="1234223432344234">
+  			<label>Message (optional)</label>
+  			<textarea name="message"></textarea>
+  			<script>
+  			document.write('<input id="obj" type="hidden" name="items" value=');
+  			document.write("'");
+  			document.write(JSON.stringify(sessionStorage.getItem('shoppingList')));
+  			document.write("'");
+  			document.write('">');
+  			</script>
+  			<input type="submit" value="Place Order"></input>
+		</form>
